@@ -1,0 +1,13 @@
+#koch {
+    margin: auto;
+}
+
+#iterationCtr {
+    position: fixed;
+    font-size: xx-large;
+}
+
+.flexContainer {
+    display: flex;
+}
+

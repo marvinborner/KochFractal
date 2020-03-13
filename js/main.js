@@ -1,0 +1,91 @@
+Reveal.initialize({
+  controls: false,
+  math: {
+    mathjax: 'node_modules/mathjax/MathJax.js',
+    config: 'TeX-AMS_HTML-full',
+    // pass other options into `MathJax.Hub.Config()`
+    TeX: {Macros: {RR: "{\\bf R}"}}
+  },
+
+  hash: true,
+  dependencies: [
+    {src: 'plugin/markdown/marked.js'},
+    {src: 'plugin/markdown/markdown.js'},
+    {src: 'plugin/highlight/highlight.js'},
+    {src: 'plugin/math/math.js', async: true},
+    {src: 'plugin/notes/notes.js', async: true}
+  ]
+});
+
+
+/******************
+ * KOCH ANIMATION *
+ ******************/
+const canvas = document.getElementById("koch");
+const ctr = document.getElementById("iterationCtr");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth * 0.9;
+canvas.height = window.innerHeight * 0.9;
+const cx = canvas.width / 2;
+const cy = canvas.height / 2;
+ctx.translate(cx, cy);
+ctx.fillStyle = "#191919";
+ctx.lineWidth = 4;
+ctx.fillRect(-cx, -cy, 2 * cx, 2 * cy);
+ctx.strokeStyle = "white";
+koch([-cx, 100], [cx, 100], 0);
+
+window.onkeyup = event => {
+  switch (event.key) {
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+      ctr.innerText = event.key;
+      ctx.fillRect(-cx, -cy, 2 * cx, 2 * cy);
+      koch([-cx, 100], [cx, 100], Number(event.key) - 1);
+  }
+};
+
+// Recursion!
+function koch(start, end, iteration) {
+  const x1 = (end[0] - start[0]) / 3 + start[0];
+  const y1 = (end[1] - start[1]) / 3 + start[1];
+  const x2 = (end[0] - start[0]) * 2 / 3 + start[0];
+  const y2 = (end[1] - start[1]) * 2 / 3 + start[1];
+  const x3 = ((x1 + x2) + Math.sqrt(3) * (-y1 + y2)) / 2;
+  const y3 = ((y1 + y2) + Math.sqrt(3) * (x1 - x2)) / 2;
+
+  ctx.beginPath();
+
+  ctx.moveTo(start[0], start[1]);
+  ctx.lineTo(x1, y1);
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(end[0], end[1]);
+
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x3, y3);
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x3, y3);
+  ctx.closePath();
+  ctx.stroke();
+
+  ctx.strokeStyle = "#191919";
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.strokeStyle = "white";
+
+  if (iteration > 0) {
+    koch([start[0], start[1]], [x1, y1], iteration - 1);
+    koch([x1, y1], [x3, y3], iteration - 1);
+    koch([x3, y3], [x2, y2], iteration - 1);
+    koch([x2, y2], [end[0], end[1]], iteration - 1);
+  }
+}
