@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+pdflatex thesis.tex -o output.pdf
+zathura output.pdf
