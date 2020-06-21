@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/reveal.css" />
+        <link rel="stylesheet" href="css/theme/black.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/monokai.css" />
+
+        <!-- Printing and PDF exports -->
+        <script>
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.type = "text/css";
+            link.href = window.location.search.match(/print-pdf/gi) ? "css/print/pdf.css" : "css/print/paper.css";
+            document.getElementsByTagName("head")[0].appendChild(link);
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Das Koch Fraktal</h1>
+                    <small>Von Marvin Borner, TGI 12.1</small>
+                </section>
+
+                <section>
+                    <h3>Gliederung</h3>
+                    <ol>
+                        <li>Fraktale</li>
+                        <li>Koch Fraktal</li>
+                        <li>Varianten des Koch Fraktals</li>
+                        <!-- engl. Wikipedia -->
+                        <li>Umfang des Koch Fraktals</li>
+                        <li>Fläche des Koch Fraktals</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>Fraktale</h3>
+                </section>
+
+                <section>
+                    <h3>Koch Fraktal</h3>
+                    <div id="iterationCtr"></div>
+                    <div class="flexContainer">
+                        <canvas id="koch"></canvas>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Summenzeichen</h3>
+                    <h1>\[ \sum_{n=-\infty}^{+\infty} f(x) \]</h1>
+                </section>
+
+                <section>
+                    <h3>Fläche des Koch Fraktals</h3>
+                </section>
+            </div>
+        </div>
+
+        <script src="js/reveal.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
