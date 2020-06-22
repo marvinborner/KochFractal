@@ -68,23 +68,46 @@
 
                 <section>
                     <!-- Mit zwei browsern visualisieren (tiling!) -->
-                    <h3>Umfang des Koch Fraktals</h3>
-                    <div class="fragment fade-right" style="float: left;">
-                        <p>Anzahl der Linien:</p>
-                        <p>\[ N_n = N_{n-1} \cdot 4 = 4^n \]</p>
-                    </div>
-                    <div class="fragment fade-left" style="float: right;">
-                        <p>Länge der Linien:</p>
-                        <p>\[ S_n = \frac{S_{n-1}}{3} = \frac{s}{3^n} \]</p>
-                    </div>
-                    <div class="fragment fade-up" style="float: left;">
-                        <p>Umfang:</p>
-                        <p>\[ P_n = N_n\cdot S_n = s\cdot\left(\frac{4}{3}\right)^n \]</p>
-                    </div>
-                    <div class="fragment fade-up" style="float: right;">
-                        <p>Limes:</p>
-                        <p>\[ \lim_{n\to\infty}P_n = \infty \]</p>
-                    </div>
+                    <section>
+                        <h3>Umfang des Koch Fraktals</h3>
+                        <div class="fragment fade-right" style="float: left;">
+                            <p>Anzahl der Linien:</p>
+                            <p>\[ N_n = N_{n-1} \cdot 4 = 4^n \]</p>
+                        </div>
+                        <div class="fragment fade-left" style="float: right;">
+                            <p>Länge der Linien:</p>
+                            <p>\[ S_n = \frac{S_{n-1}}{3} = \frac{s}{3^n} \]</p>
+                        </div>
+                        <div data-action="nebenrechnung" class="fragment fade-up" style="float: left;">
+                            <p>Umfang:</p>
+                            <p>\[ P_n = N_n\cdot S_n = s\cdot\left(\frac{4}{3}\right)^n \]</p>
+                        </div>
+                        <div class="fragment fade-up" style="float: right;">
+                            <p>Grenzwert:</p>
+                            <p>\[ \lim_{n\to\infty}P_n = \infty \]</p>
+                        </div>
+                        <span data-action="gooo" class="fragment" style="display: none !important;"></span>
+                    </section>
+                    <section>
+                        <h3>Nebenrechnung</h3>
+                        <p class="fragment fade-up">\[ N_n = N_{n-1} \cdot 4 = 4^n \]</p>
+                        <p class="fragment fade-up">\[ S_n = \frac{S_{n-1}}{3} = \frac{s}{3^n} \]</p>
+                        <p class="fragment fade-up">
+                            \[ P_n = N_n\cdot S_n = 4^n \cdot \frac{s}{3^n} = \frac{s \cdot 4^n}{3^n} = s \cdot
+                            \frac{4^n}{3^n} \]
+                        </p>
+                        <span data-action="umfang-back" class="fragment" style="display: none !important;"></span>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>Summenzeichen</h3>
+                    <p>\[ \sum_{x=1}^{5} x^2 \]</p>
+                    <p class="fragment fade-up">\[ = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55 \]</p>
+                </section>
+
+                <section>
+                    <h3>Fläche des Koch Fraktals</h3>
                 </section>
 
                 <section>
@@ -95,11 +118,6 @@
                         src="imgs/KochFlake.svg"
                         alt="Hier könnte ihre Werbung stehen!"
                     />
-                </section>
-
-                <section>
-                    <h3>Summenzeichen</h3>
-                    <h1>\[ \sum_{n=-\infty}^{+\infty} f(x) \]</h1>
                 </section>
 
                 <section>
@@ -115,6 +133,12 @@
                     <p>Wissen</p>
                     <a href="https://en.wikipedia.org/wiki/Koch_snowflake" target="_blank">
                         https://en.wikipedia.org/wiki/Koch_snowflake
+                    </a>
+                    <a
+                        href="http://www.mathematik.uni-ulm.de/stochastik/lehre/ws06_07/seminar_fraktale/daikeler.pdf"
+                        target="_blank"
+                    >
+                        http://www.mathematik.uni-ulm.de/stochastik/lehre/ws06_07/seminar_fraktale/daikeler.pdf
                     </a>
                 </section>
             </div>

@@ -124,3 +124,20 @@ function koch(start, end, iteration) {
         koch([x2, y2], [end[0], end[1]], iteration - 1);
     }
 }
+
+// Some revealjs thingies
+// This some real hacky shit yo
+Reveal.addEventListener("fragmentshown", (event) => {
+    switch (event.fragment.getAttribute("data-action")) {
+        case "nebenrechnung":
+            Reveal.slide(4, 1, 0);
+            break;
+        case "umfang-back":
+            Reveal.slide(4, 0, 2);
+            break;
+        case "gooo":
+            Reveal.slide(5, 0, 0);
+            break;
+        default:
+    }
+});
