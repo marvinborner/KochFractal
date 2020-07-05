@@ -1,24 +1,3 @@
-Reveal.initialize({
-    controls: false,
-    math: {
-        //mathjax: "node_modules/mathjax/MathJax.js", // local, but crashes sometimes
-        mathjax: "https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js",
-        config: "TeX-AMS_HTML-full",
-        // pass other options into `MathJax.Hub.Config()`
-        TeX: { Macros: { RR: "{\\bf R}" } },
-    },
-
-    hash: true,
-    dependencies: [
-        { src: "plugin/markdown/marked.js" },
-        { src: "plugin/markdown/markdown.js" },
-        { src: "plugin/highlight/highlight.js" },
-        { src: "plugin/math/math.js", async: true },
-        { src: "plugin/notes/notes.js", async: true },
-        { src: "plugin/mouse-pointer/mouse-pointer.js", async: true },
-    ],
-});
-
 /******************
  * KOCH ANIMATION *
  ******************/
@@ -140,4 +119,21 @@ Reveal.addEventListener("fragmentshown", (event) => {
             break;
         default:
     }
+});
+
+Reveal.initialize({
+    controls: false,
+    hash: true,
+    dependencies: [
+        { src: "plugin/markdown/marked.js" },
+        { src: "plugin/markdown/markdown.js" },
+        { src: "plugin/highlight/highlight.js" },
+        { src: "plugin/math/math.js", async: true },
+        { src: "plugin/notes/notes.js", async: true },
+        { src: "plugin/mouse-pointer/mouse-pointer.js", async: true },
+    ],
+    math: {
+        mathjax: "./node_modules/mathjax/es5/tex-svg-full.js",
+        // pass other options into `MathJax.Hub.Config()`
+    },
 });
