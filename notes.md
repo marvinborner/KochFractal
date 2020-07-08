@@ -73,7 +73,16 @@ Zur Verständlichkeit ein Bild.
 
 # Fläche der Koch-Kurve
 
--
+Monocle/Split-screen mit Simulation
+
+-   Wie viele Dreiecke ("#1") passen in das große Dreieck ("#0")? => 9 ("#2")
+-   Bei der zweiten Generation kommen an den 4 Linien Dreiecke mit 1/9 Flächeninhalt hinzu
+
+Generalisierung (klick)
+
+-   Bei vorheriger Gleichung für Anzahl der Linien: $4^n$
+-   => Die Anzahl der Linien der vorherigen Generation mit der Fläche der Dreiecke multiplizieren
+-   In jeder Generation kommt $4^{n-1} \cdot (1/9)^{n - 1}$ Fläche dazu
 
 # Koch Schneeflocke
 

@@ -93,6 +93,7 @@
                     </section>
                     <section>
                         <div id="iterationCtr"></div>
+                        <div id="flaecheErg"></div>
                         <div class="flexContainer">
                             <canvas id="koch"></canvas>
                         </div>
@@ -157,7 +158,24 @@
                         </div>
                     </section>
                     <section>
-                        <p>\[ \frac{2s^2\sqrt{3}}{5} \]</p>
+                        <p class="fragment fade-in">
+                            Jedes neue Dreieck hat \( \frac{1}{9} \) des vorherigen Flächeninhalts
+                        </p>
+                        <p class="fragment fade-in">\[ N_n = 4^n \]</p>
+                        <p class="fragment fade-in">\[ \triangle_n = \left(\frac{1}{9}\right)^n \]</p>
+                        <p class="fragment fade-in">
+                            \[ \Delta A_n = 4^{n-1} \cdot \left(\frac{1}{9}\right)^{n - 1} =
+                            \left(\frac{4}{9}\right)^{n-1} \]
+                        </p>
+                    </section>
+                    <section>
+                        <p>\[ A_n = \sum_{k=0}^{n} \left(\frac{4}{9}\right)^k \]</p>
+                    </section>
+                    <section>
+                        <p>\[ A = \sum_{n=0}^{\infty} \left(\frac{4}{9}\right)^n \]</p>
+                        <p class="fragment fade-in">
+                            \[ = \frac{1}{1 - \frac{4}{9}} = \frac{9}{5} = \underline{\underline{1,8}} \]
+                        </p>
                     </section>
                 </section>
 

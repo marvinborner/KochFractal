@@ -3,9 +3,10 @@
 /******************
  * KOCH ANIMATION *
  ******************/
-{
+function koch_slide() {
     const canvas = document.getElementById("koch");
     const ctr = document.getElementById("iterationCtr");
+    const flaecheErg = document.getElementById("flaecheErg");
     const ctx = canvas.getContext("2d");
 
     // Constants...
@@ -17,6 +18,10 @@
     const lineWidth = 2;
 
     let triangleCount;
+    let dispatcherCount = 0;
+    let additionString = "";
+    let showAddition = false;
+    let areaInterval;
 
     canvas.width = window.innerWidth * 0.9;
     canvas.height = window.innerHeight * 0.9;
@@ -32,6 +37,7 @@
     window.onkeyup = (event) => {
         switch (event.key) {
             case "0":
+                additionString = "\\[ 0  ";
             case "1":
             case "2":
             case "3":
@@ -42,9 +48,44 @@
             case "8":
             case "9":
                 triangleCount = 0;
+                dispatcherCount = parseInt(event.key);
                 ctx.fillRect(-cx, -cy, 2 * cx, 2 * cy);
                 koch([-cx, 100], [cx, 100], Number(event.key) - 1);
-                ctr.innerText = "Generation: " + event.key + " - Dreiecke: " + triangleCount;
+                if (showAddition && event.key != "0") {
+                    additionString = additionString.slice(0, -2);
+                    if (event.key == "1") additionString += " + (1) \\]";
+                    else additionString += `+ 4^{${event.key}} \\cdot \\frac{1}{9^${event.key}} \\]`;
+                    ctr.innerText = additionString;
+                    console.log(additionString);
+                    MathJax.typeset();
+                    flaecheErg.innerText = area(parseInt(event.key));
+                } else if (event.key != "0") {
+                    ctr.innerText = "Generation: " + event.key + " - Dreiecke: " + triangleCount;
+                }
+
+                break;
+            case "a":
+                ctr.innerText = "";
+                additionString = "";
+                showAddition = !showAddition;
+                break;
+            case "z":
+                let i = 0;
+                areaInterval = setInterval(() => {
+                    flaecheErg.innerText = area(i);
+                    i++;
+                }, 500);
+                break;
+            case "q":
+                clearInterval(areaInterval);
+                break;
+            case "[":
+                if (dispatcherCount >= 1) dispatcherCount--;
+                window.dispatchEvent(new KeyboardEvent("keyup", { key: dispatcherCount + "" }));
+                break;
+            case "]":
+                if (dispatcherCount <= 9) dispatcherCount++;
+                window.dispatchEvent(new KeyboardEvent("keyup", { key: dispatcherCount + "" }));
                 break;
         }
     };
@@ -53,6 +94,14 @@
         // Or just 4^n, but I like recursion :D
         if (generation == 0) return 1;
         return perimeter(generation - 1) * 4;
+    }
+
+    function area(generation) {
+        let res = 0;
+        for (let i = 0; i < generation; i++) {
+            res += Math.pow(4 / 9, i);
+        }
+        return res;
     }
 
     // Recursion!
@@ -111,7 +160,7 @@
 /***********
  * DREIECK *
  ***********/
-{
+function triangle_slide() {
     const HEIGHT = window.innerHeight / 3;
 
     const backgroundColor = "#191919";
@@ -173,6 +222,11 @@ Reveal.addEventListener("fragmentshown", (event) => {
             break;
         default:
     }
+});
+
+Reveal.addEventListener("slidechanged", (event) => {
+    if ((event.indexh = 3 && event.indexv == 2)) koch_slide();
+    else if ((event.indexh = 1 && event.indexv == 0)) triangle_slide();
 });
 
 Reveal.initialize({

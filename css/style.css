@@ -7,6 +7,14 @@
     font-size: xx-large;
 }
 
+#flaecheErg {
+    color: "red";
+    position: fixed;
+    bottom: 20px;
+
+    font-size: xx-large;
+}
+
 .flexContainer {
     display: flex;
 }
