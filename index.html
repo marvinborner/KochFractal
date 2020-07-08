@@ -35,16 +35,38 @@
                     <h3>Gliederung</h3>
                     <ol>
                         <li>Fraktale</li>
-                        <li>Koch Fraktal</li>
-                        <li>Varianten des Koch Fraktals</li>
-                        <!-- engl. Wikipedia -->
-                        <li>Umfang des Koch Fraktals</li>
-                        <li>Fläche des Koch Fraktals</li>
+                        <li>Koch Kurve</li>
+                        <li>Umfang</li>
+                        <li>Fläche</li>
+                        <li>Koch Schneeflocke</li>
                     </ol>
                 </section>
 
                 <section>
                     <h3>Fraktale</h3>
+                    <section>
+                        <ul>
+                            <li class="fragment fade-in">Hohe Selbstähnlichkeit</li>
+                            <li class="fragment fade-in">Mandelbrot</li>
+                            <li class="fragment fade-in">Natur</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img
+                            class="plain"
+                            style="background: none; height: 500px;"
+                            src="imgs/Romanesco.jpg"
+                            alt="Hier könnte ihre Werbung stehen!"
+                        />
+                    </section>
+                    <section>
+                        <img
+                            class="plain"
+                            style="background: none; height: 500px;"
+                            src="imgs/Sierpinski.gif"
+                            alt="Hier könnte ihre Werbung stehen!"
+                        />
+                    </section>
                 </section>
 
                 <section>
@@ -52,11 +74,22 @@
                     <section>
                         <h3>Regeln</h3>
                         <ol>
-                            <li>Mit einer geraden Linie starten</li>
-                            <li>Linie in drei Teile aufteilen</li>
-                            <li>Den mittleren Teil der Linie "radieren"</li>
-                            <li>Den mittleren Teil zu einem gleichseitigen Dreieck verbinden</li>
+                            <li class="fragment fade-in">Mit einer geraden Linie starten</li>
+                            <li class="fragment fade-in">Linie in drei Teile aufteilen</li>
+                            <li class="fragment fade-in">Den mittleren Teil der Linie "radieren"</li>
+                            <li class="fragment fade-in">
+                                Den mittleren Teil zu einem gleichseitigen Dreieck verbinden
+                            </li>
+                            <li class="fragment fade-in">Mit allen neuen Linien wiederholen</li>
                         </ol>
+                    </section>
+                    <section>
+                        <img
+                            class="plain"
+                            style="background: none;"
+                            src="imgs/KochConstruction.svg"
+                            alt="Hier könnte ihre Werbung stehen!"
+                        />
                     </section>
                     <section>
                         <div id="iterationCtr"></div>
@@ -67,9 +100,19 @@
                 </section>
 
                 <section>
+                    <h3>Selbstähnlichkeit</h3>
+                    <img
+                        class="plain"
+                        style="background: none; height: 500px;"
+                        src="imgs/KochSim.gif"
+                        alt="Hier könnte ihre Werbung stehen!"
+                    />
+                </section>
+
+                <section>
                     <!-- Mit zwei browsern visualisieren (tiling!) -->
                     <section>
-                        <h3>Umfang des Koch Fraktals</h3>
+                        <h3>Umfang der Koch Kurve</h3>
                         <div class="fragment fade-right" style="float: left;">
                             <p>Anzahl der Linien:</p>
                             <p>\[ N_n = N_{n-1} \cdot 4 = 4^n \]</p>
@@ -101,45 +144,34 @@
                 </section>
 
                 <section>
-                    <h3>Summenzeichen</h3>
-                    <p>\[ \sum_{x=1}^{5} x^2 \]</p>
-                    <p class="fragment fade-up">\[ = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55 \]</p>
+                    <h3>Fläche der Koch Kurve</h3>
                 </section>
 
                 <section>
-                    <h3>Fläche des Koch Fraktals</h3>
-                </section>
-
-                <section>
-                    <h3>Varianten des Koch Fraktals</h3>
+                    <h3>Die Koch Schneeflocke</h3>
                     <img
                         class="plain"
                         style="background: none;"
                         src="imgs/KochFlake.svg"
                         alt="Hier könnte ihre Werbung stehen!"
                     />
+                    <span class="fragment" style="display: none !important;"></span>
+                    <p class="fragment fade-up">
+                        \[ P_n = \textcolor{red}{3} \cdot s \cdot \frac{4^n}{3^n} \]
+                    </p>
                 </section>
 
                 <section>
-                    <h3>Fläche des Koch Fraktals</h3>
+                    <h3>Summenzeichen</h3>
+                    <p>\[ \sum_{x=1}^{5} x^2 \]</p>
+                    <p class="fragment fade-up">\[ = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55 \]</p>
                 </section>
 
                 <section>
                     <h3>Quellen</h3>
-                    <p>Bilder</p>
-                    <a href="https://en.wikipedia.org/wiki/Koch_snowflake#/media/File:KochFlake.svg" target="_blank">
-                        https://en.wikipedia.org/wiki/Koch_snowflake#/media/File:KochFlake.svg
-                    </a>
-                    <p>Wissen</p>
-                    <a href="https://en.wikipedia.org/wiki/Koch_snowflake" target="_blank">
-                        https://en.wikipedia.org/wiki/Koch_snowflake
-                    </a>
-                    <a
-                        href="http://www.mathematik.uni-ulm.de/stochastik/lehre/ws06_07/seminar_fraktale/daikeler.pdf"
-                        target="_blank"
-                    >
-                        http://www.mathematik.uni-ulm.de/stochastik/lehre/ws06_07/seminar_fraktale/daikeler.pdf
-                    </a>
+                    <p>https://en.wikipedia.org/wiki/Koch_snowflake</p>
+                    <p>https://de.wikipedia.org/wiki/Selbst%C3%A4hnlichkeit</p>
+                    <p>http://www.mathematik.uni-ulm.de/stochastik/lehre/ws06_07/seminar_fraktale/daikeler.pdf</p>
                 </section>
             </div>
         </div>

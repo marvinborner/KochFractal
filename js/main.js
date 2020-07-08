@@ -109,13 +109,13 @@ function koch(start, end, iteration) {
 Reveal.addEventListener("fragmentshown", (event) => {
     switch (event.fragment.getAttribute("data-action")) {
         case "nebenrechnung":
-            Reveal.slide(4, 1, 0);
+            Reveal.slide(5, 1, 0);
             break;
         case "umfang-back":
-            Reveal.slide(4, 0, 2);
+            Reveal.slide(5, 0, 2);
             break;
         case "gooo":
-            Reveal.slide(5, 0, 0);
+            Reveal.slide(6, 0, 0);
             break;
         default:
     }
