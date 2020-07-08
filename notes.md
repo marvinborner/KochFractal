@@ -11,7 +11,7 @@ Stark vereinfacht!
     -   Das Muster wiederholt sich bis ins Unendliche
 -   Das Koch Fraktal ist dem allen sehr ähnlich, wie wir bald feststellen werden
 
-# Regeln
+# Koch-Regeln - das Koch-Rezept :)
 
 1. Mit einer geraden Linie starten
 2. Linie in drei Teile aufteilen
@@ -25,6 +25,7 @@ Zur Verständlichkeit ein Bild.
 
 -   Ggf Splitscreen mit Regeln
 -   Generationen darstellen (0..9)
+-   **Bei der Koch-Kurve wird immer von der unendlichen Generation/Iteration ausgegangen!**
 
 # Selbstähnlichkeit
 
@@ -61,9 +62,9 @@ Zur Verständlichkeit ein Bild.
 ### Grenzwert
 
 -   Der Grenzwert des Umfangs ins Unendliche geht gegen unendlich, da $\frac{4}{3}$ größer als 1 ist
--   Interessant: Während die gesamte Länge der Koch-Kurve ins Unendliche geht, geht die Länge der Linien zu 0
+-   Interessant: Während die gesamte Länge der Koch-Kurve ins Unendliche geht, geht die Länge der einzelnen Linien zu 0
 
-.. Umfang ist in dieser Form etwas speziell, da es ja nicht geschlossen ist => Schneeflocke
+.. Umfang ist in dieser Form etwas speziell, da es ja nicht geschlossen ist => Schneeflocke später
 
 # Summenzeichen
 
@@ -81,11 +82,41 @@ Monocle/Split-screen mit Simulation
 Generalisierung (klick)
 
 -   Bei vorheriger Gleichung für Anzahl der Linien: $4^n$
+-   Dreiecksfläche der derzeitigen Generation
 -   => Die Anzahl der Linien der vorherigen Generation mit der Fläche der Dreiecke multiplizieren
 -   In jeder Generation kommt $4^{n-1} \cdot (1/9)^{n - 1}$ Fläche dazu
+
+Klick
+
+-   Darstellung: Fläche zum Zeitpunkt n ist die Summe aller Flächen-Differenzen
+
+Durch Limes ins Unendliche kann die Fläche berechnet werden
+
+-   Geometrische Reihe => **1,8**
+-   => Bestimmte Fläche, unendlicher Umfang/Länge
 
 # Koch Schneeflocke
 
 -   Wenn man statt einer anfänglichen Gerade drei Geraden nimmt, kann man daraus ein Dreieck formen
 -   Dieses Dreieck hat für jede Seite die selben Regeln wie bei der Linie
--   Der Umfang ist somit $$P_n = 3 \cdot s\cdot\left(\frac{4}{3}\right)^n$$
+-   Der Umfang ist somit dreimal so groß
+-   Fläche: An jeder Seite wie berechnet + mittleres Dreieck
+
+# Differenzierbarkeit
+
+-   Eine Funktion ist differenzierbar, wenn man eine Tangente konstruieren kann
+-   Die Koch-Kurve hat keine Geraden und besteht im Unendlichen nur aus Winkeln
+-   => Nicht differenzierbar
+
+# Stetigkeit (vielleicht auslassen)
+
+Nicht stetig:
+
+-   Definitionslücken
+-   Sprünge in der Funktion
+
+Stetig:
+
+-   Umgangssprachlich: Sind ohne Abheben zeichenbar (stark vereinfacht)
+-   Sinus, Parabel, ... => Alle normalen Funktionen
+-   => Die Koch-Kurve ist stetig

@@ -35,10 +35,11 @@
                     <h3>Gliederung</h3>
                     <ol>
                         <li>Fraktale</li>
-                        <li>Koch Kurve</li>
+                        <li>Koch-Kurve</li>
                         <li>Umfang</li>
                         <li>Fläche</li>
-                        <li>Koch Schneeflocke</li>
+                        <li>Schneeflocke</li>
+                        <li>Differenzierbarkeit</li>
                     </ol>
                 </section>
 
@@ -72,7 +73,7 @@
                 <section>
                     <!-- Vorstellung -->
                     <section>
-                        <h3>Regeln</h3>
+                        <h3>Koch-Regeln</h3>
                         <ol>
                             <li class="fragment fade-in">Mit einer geraden Linie starten</li>
                             <li class="fragment fade-in">Linie in drei Teile aufteilen</li>
@@ -113,7 +114,7 @@
                 <section>
                     <!-- Mit zwei browsern visualisieren (tiling!) -->
                     <section>
-                        <h3>Umfang der Koch Kurve</h3>
+                        <h3>Umfang der Koch-Kurve</h3>
                         <div class="fragment fade-right" style="float: left;">
                             <p>Anzahl der Linien:</p>
                             <p>\[ N_n = N_{n-1} \cdot 4 = 4^n \]</p>
@@ -151,7 +152,7 @@
                 </section>
 
                 <section>
-                    <h3>Fläche der Koch Kurve</h3>
+                    <h3>Fläche der Koch-Kurve</h3>
                     <section>
                         <div class="flexContainer">
                             <canvas id="dreieck"></canvas>
@@ -162,7 +163,7 @@
                             Jedes neue Dreieck hat \( \frac{1}{9} \) des vorherigen Flächeninhalts
                         </p>
                         <p class="fragment fade-in">\[ N_n = 4^n \]</p>
-                        <p class="fragment fade-in">\[ \triangle_n = \left(\frac{1}{9}\right)^n \]</p>
+                        <p class="fragment fade-in">\[ A_{\triangle_n} = \left(\frac{1}{9}\right)^n \]</p>
                         <p class="fragment fade-in">
                             \[ \Delta A_n = 4^{n-1} \cdot \left(\frac{1}{9}\right)^{n - 1} =
                             \left(\frac{4}{9}\right)^{n-1} \]
@@ -172,7 +173,7 @@
                         <p>\[ A_n = \sum_{k=0}^{n} \left(\frac{4}{9}\right)^k \]</p>
                     </section>
                     <section>
-                        <p>\[ A = \sum_{n=0}^{\infty} \left(\frac{4}{9}\right)^n \]</p>
+                        <p>\[ \lim_{n\to\infty}A_n = \sum_{n=0}^{\infty} \left(\frac{4}{9}\right)^n \]</p>
                         <p class="fragment fade-in">
                             \[ = \frac{1}{1 - \frac{4}{9}} = \frac{9}{5} = \underline{\underline{1,8}} \]
                         </p>
@@ -187,20 +188,50 @@
                         src="imgs/KochFlake.svg"
                         alt="Hier könnte ihre Werbung stehen!"
                     />
-                    <span class="fragment" style="display: none !important;"></span>
+                    <!-- <span class="fragment" style="display: none !important;"></span> -->
                     <p class="fragment fade-up">
                         \[ P_n = \textcolor{red}{3} \cdot s \cdot \frac{4^n}{3^n} \]
                     </p>
                 </section>
 
                 <section>
+                    <h3>Differenzierbarkeit</h3>
+                    <p class="fragment fade-in">Generell: Man kann eine Tangente konstruieren</p>
+                    <p class="fragment fade-in">Die Koch-Kurve ist an keinem Punkt differenzierbar</p>
+                </section>
+
+                <section>
+                    <h3>Stetigkeit</h3>
+                    <section>
+                        <p class="fragment fade-in">Nicht stetig:</p>
+                        <ul>
+                            <li class="fragment fade-in">Definitionslücken</li>
+                            <li class="fragment fade-in">
+                                Sprünge in der Funktion: \[ f(x) = \begin{cases} x, & \text{wenn x $\leqslant$ 1} \\ x +
+                                1, & \text{wenn x > 1} \\ \end{cases} \]
+                            </li>
+                        </ul>
+                        <p class="fragment fade-in">Stetig:</p>
+                        <ul>
+                            <li class="fragment fade-in">"Sind ohne abheben zeichenbar"</li>
+                            <li class="fragment fade-in">Alle "normalen" Funktionen</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>Die Koch-Kurve ist stetig</p>
+                    </section>
+                </section>
+
+                <section>
                     <h3>Quellen</h3>
-                    <p>https://en.wikipedia.org/wiki/Koch_snowflake</p>
-                    <p>https://de.wikipedia.org/wiki/Selbst%C3%A4hnlichkeit</p>
-                    <p>http://www.mathematik.uni-ulm.de/stochastik/lehre/ws06_07/seminar_fraktale/daikeler.pdf</p>
-                    <p>
+                    <small>https://en.wikipedia.org/wiki/Koch_snowflake</small>
+                    <small>https://de.wikipedia.org/wiki/Selbst%C3%A4hnlichkeit</small>
+                    <small>
+                        http://www.mathematik.uni-ulm.de/stochastik/lehre/ws06_07/seminar_fraktale/daikeler.pdf
+                    </small>
+                    <small>
                         https://www.uni-ulm.de/fileadmin/website_uni_ulm/mawi.inst.110/mitarbeiter/spodarev/publications/fraktale.pdf
-                    </p>
+                    </small>
                 </section>
             </div>
         </div>

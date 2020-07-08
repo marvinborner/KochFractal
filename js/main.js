@@ -53,8 +53,8 @@ function koch_slide() {
                 koch([-cx, 100], [cx, 100], Number(event.key) - 1);
                 if (showAddition && event.key != "0") {
                     additionString = additionString.slice(0, -2);
-                    if (event.key == "1") additionString += " + (1) \\]";
-                    else additionString += `+ 4^{${event.key}} \\cdot \\frac{1}{9^${event.key}} \\]`;
+                    if (event.key == "1") additionString += " + 1 \\]";
+                    else additionString += `+ 4^{${event.key - 1}} \\cdot \\frac{1}{9^${event.key - 1}} \\]`;
                     ctr.innerText = additionString;
                     console.log(additionString);
                     MathJax.typeset();
@@ -67,6 +67,7 @@ function koch_slide() {
             case "a":
                 ctr.innerText = "";
                 additionString = "";
+                flaecheErg.innerText = "";
                 showAddition = !showAddition;
                 break;
             case "z":
@@ -173,7 +174,6 @@ function triangle_slide() {
     canvas.height = window.innerHeight * 0.8;
     const cx = canvas.width / 2;
     const cy = canvas.height / 2 - HEIGHT;
-    //ctx.translate(cx, cy);
     ctx.fillStyle = lineColor;
     ctx.lineWidth = 5;
     ctx.strokeStyle = lineColor;
@@ -205,6 +205,7 @@ function triangle_slide() {
             }
         }
     };
+    window.dispatchEvent(new KeyboardEvent("keyup", { key: "0" }));
 }
 
 // Some revealjs thingies
