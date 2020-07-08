@@ -64,14 +64,14 @@ Zur Verständlichkeit ein Bild.
 
 .. Umfang ist in dieser Form etwas speziell, da es ja nicht geschlossen ist => Schneeflocke
 
-# Koch Schneeflocke
-
--   Wenn man statt einer anfänglichen Gerade drei Geraden nimmt, kann man daraus ein Dreieck formen
--   Dieses Dreieck hat für jede Seite die selben Regeln wie bei der Linie
--   Der Umfang ist somit $$P_n = 3 \cdot s\cdot\left(\frac{4}{3}\right)^n$$
-
 # Summenzeichen
 
 -   Im Nachfolgenden wird das Summenzeichen gebraucht, deshalb kurze Einführung
 -   Unten wird x einem Startwert zugewiesen, oben Endwert
 -   $x^2$ wird mit jedem Wert ausgerechnet und addiert => 55
+
+# Koch Schneeflocke
+
+-   Wenn man statt einer anfänglichen Gerade drei Geraden nimmt, kann man daraus ein Dreieck formen
+-   Dieses Dreieck hat für jede Seite die selben Regeln wie bei der Linie
+-   Der Umfang ist somit $$P_n = 3 \cdot s\cdot\left(\frac{4}{3}\right)^n$$
