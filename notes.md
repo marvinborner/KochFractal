@@ -55,7 +55,8 @@ Zur Verständlichkeit ein Bild.
 
 ### Umfang
 
--   Der Umfang ist somit das Berechnete
+-   Sprich: Die Kurvenlänge wird in jedem Iterationsschritt n um (4/3)^n größer
+-   Der Umfang bzw. Länge der Koch Kurve ist somit das Berechnete
 
 ### Grenzwert
 
@@ -69,6 +70,10 @@ Zur Verständlichkeit ein Bild.
 -   Im Nachfolgenden wird das Summenzeichen gebraucht, deshalb kurze Einführung
 -   Unten wird x einem Startwert zugewiesen, oben Endwert
 -   $x^2$ wird mit jedem Wert ausgerechnet und addiert => 55
+
+# Fläche der Koch-Kurve
+
+-
 
 # Koch Schneeflocke
 
