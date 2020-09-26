@@ -1,3 +1,5 @@
+alert("Herzlich willkommen zu dieser Präsentation!\n\nIhr könnt mit den Pfeiltasten oder der Leertaste navigieren.\n\nIn der Koch-Kurve-Simulation könnt ihr mit den Tasten 0-9 verschiedene Iterationen simulieren. Mit a-0 kommt ihr in den Flächen-Modus. Im Flächen-Modus wird mit z ein Interval gestartet, welches mit q beendet werden kann.\n\nBei dem leeren Dreieck können über 1 und 2 verschiedene extra-Dinge angezeigt werden.\n\nNicht vergessen: Bei Fragen einfach Fragen fragen! Viel Spaß!");
+
 // Disclaimer: This code is ugly and was just written so it works :)
 
 /******************
